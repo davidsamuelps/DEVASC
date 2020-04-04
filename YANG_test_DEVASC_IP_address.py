@@ -27,6 +27,6 @@ reply = m.get_config(source='running', filter = netconf_filter)
 print(xml.dom.minidom.parseString(reply.xml).toprettyxml())
 m.close_session()
 
-#Branch1_test - will delete this
+#Branch1_test - solving merge conflict
 
 #Branch2_test
