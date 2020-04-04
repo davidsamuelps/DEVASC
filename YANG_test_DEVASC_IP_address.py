@@ -27,6 +27,6 @@ reply = m.get_config(source='running', filter = netconf_filter)
 print(xml.dom.minidom.parseString(reply.xml).toprettyxml())
 m.close_session()
 
-#Branch1_test - solving merge conflict
+#Branch1_test - solved and made a pull too
 
-#Branch2_test
+#Branch2_test - solved and made a pull too from branch1
