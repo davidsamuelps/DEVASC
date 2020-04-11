@@ -72,4 +72,34 @@ You can also strip whitespace from the left side of a string using the lstrip() 
 
 In this example, we start with a value that has whitespace at the beginning and the end ➊. We then remove the extra space from the right side at ➋, from the left side at ➌, and from both sides at ➍.
 
+8.- Python defaults to a float in any operation that uses a float, even if the output is a whole number
+
+9.- Underscores in Numbers
+When you’re writing long numbers, you can group digits using underscores to make large numbers more readable:
+
+>>> universe_age = 14_000_000_000
+
+When you print a number that was defined using underscores, Python prints only the digits:
+
+>>> print(universe_age)
+14000000000
+
+Python ignores the underscores when storing these kinds of values. Even if you don’t group the digits in threes, the value will still be unaffected. To Python, 1000 is the same as 1_000, which is the same as 10_00. This feature works for integers and floats, but it’s only available in Python 3.6 and later.
+
+10.- Multiple Assignment
+You can assign values to more than one variable using just a single line. This can help shorten your programs and make them easier to read; you’ll use this technique most often when initializing a set of numbers.
+
+For example, here’s how you can initialize the variables x, y, and z to zero:
+
+>>> x, y, z = 0, 0, 0
+
+You need to separate the variable names with commas, and do the same with the values, and Python will assign each value to its respectively positioned variable. As long as the number of values matches the number of variables, Python will match them up correctly.
+
+11.- Constants
+A constant is like a variable whose value stays the same throughout the life of a program. Python doesn’t have built-in constant types, but Python programmers use all capital letters to indicate a variable should be treated as a constant and never be changed:
+
+MAX_CONNECTIONS = 5000
+
+When you want to treat a variable as a constant in your code, make the name of the variable all capital letters.
+
 
