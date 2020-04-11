@@ -44,7 +44,7 @@ first_name3 = "joe "
 last_name3 = " smith"
 first_name4 = first_name3.rstrip()
 last_name4 = last_name3.lstrip()
-message9 = f" Hello Mr. {first_name4.title()} {last_name4.title()}, would you like to learn Python today? "
+message9 = f" Hello Mr. {first_name3.title().rstrip()} {last_name3.title().lstrip()}, would you like to learn Python today? \n\t NESTED METHODS!\n\t\tHello Mr. {first_name4.title()} {last_name4.title()}, would you like to learn Python today?"
 print(message9.strip())
 
 #Tenth message with quotation marks:
