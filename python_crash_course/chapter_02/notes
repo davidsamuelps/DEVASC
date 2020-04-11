@@ -14,3 +14,62 @@ Each of the following keywords has a specific meaning, and you’ll see an error
 	async      elif       if         or         yield
 4.- Variable names should be short but descriptive. For example, name is better than n, student_name is better than s_n, and name_length is better than length_of_persons_name
 5.- Be careful when using the lowercase letter l and the uppercase letter O because they could be confused with the numbers 1 and 0
+6.- Adding Whitespace to Strings with Tabs or Newlines
+ 
+To add a tab to your text, use the character combination \t as shown at ➊:
+
+   >>> print("Python")
+   Python
+➊ >>> print("\tPython")
+       Python
+
+To add a newline in a string, use the character combination \n:
+
+>>> print("Languages:\nPython\nC\nJavaScript")
+Languages:
+Python
+C
+JavaScript
+
+You can also combine tabs and newlines in a single string. The string "\n\t" tells Python to move to a new line, and start the next line with a tab. The following example shows how you can use a one-line string to generate four lines of output:
+
+>>> print("Languages:\n\tPython\n\tC\n\tJavaScript")
+Languages:
+    Python
+    C
+    JavaScript
+
+7.- Stripping Whitespace
+
+Python can look for extra whitespace on the right and left sides of a string. To ensure that no whitespace exists at the right end of a string, use the rstrip() method.
+
+➊ >>> favorite_language = 'python '
+➋ >>> favorite_language
+   'python '
+➌ >>> favorite_language.rstrip()
+   'python'
+➍ >>> favorite_language
+   'python '
+
+The value associated with favorite_language at ➊ contains extra whitespace at the end of the string. When you ask Python for this value in a terminal session, you can see the space at the end of the value ➋. When the rstrip() method acts on the variable favorite_language at ➌, this extra space is removed. However, it is only removed temporarily. If you ask for the value of favorite_language again, you can see that the string looks the same as when it was entered, including the extra whitespace ➍.
+
+To remove the whitespace from the string permanently, you have to associate the stripped value with the variable name:
+
+   >>> favorite_language = 'python '
+➊ >>> favorite_language = favorite_language.rstrip()
+   >>> favorite_language
+   'python'
+
+You can also strip whitespace from the left side of a string using the lstrip() method, or from both sides at once using strip():
+
+➊ >>> favorite_language = ' python '
+➋ >>> favorite_language.rstrip()
+   ' python'
+➌ >>> favorite_language.lstrip()
+   'python '
+➍ >>> favorite_language.strip()
+   'python'
+
+In this example, we start with a value that has whitespace at the beginning and the end ➊. We then remove the extra space from the right side at ➋, from the left side at ➌, and from both sides at ➍.
+
+
