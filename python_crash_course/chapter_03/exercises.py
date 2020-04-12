@@ -96,4 +96,41 @@ print(new_message11.lstrip())
 
 #3-7. Shrinking Guest List
 
+announcement_message2 = """
+
+***With much regret we have been informed about the table arrangement not happening. We will be only able to invite two people***
+
+Printing current guest list:
+"""
+print(announcement_message2.upper())
+
+for name in relatives:
+    print("\t"+name.title().strip())
+
+print("""
+Removing extra guests from the list
+""")
+
+list_max_position = 6
+counter = 0
+
+for counter in range (0,5):
+  removed_relative = relatives.pop()
+  print("With utmost regret I must cancel your invitation to our dinner, "+removed_relative.title().strip())
+
+for names in relatives:
+    print("You are still invited to the dinner, "+names.title().strip())
+
+print("Displaying remaining guests:")
+
+for name in relatives:
+    print("\t"+name.title().strip())
+
+print("Removing remaining guests")
+
+relatives.remove("Carolina")
+relatives.remove("dad")
+
+print("\nDisplaying remaining guests - list should be empty")
+print(relatives)
 
