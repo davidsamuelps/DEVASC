@@ -2,47 +2,227 @@
 
 2.- If you ask Python to print a list, Python returns its representation of the list, including the square brackets:
 
-['trek', 'cannondale', 'redline', 'specialized']
+	['trek', 'cannondale', 'redline', 'specialized']
 
-Because this isn’t the output you want your users to see, let’s learn how to access the individual items in a list.
+	Because this isn’t the output you want your users to see, let’s learn how to access the individual items in a list.
 
 3.- Accessing Elements in a List
-Lists are ordered collections, so you can access any element in a list by telling Python the position, or index, of the item desired. To access an element in a list, write the name of the list followed by the index of the item enclosed in square brackets.
+	Lists are ordered collections, so you can access any element in a list by telling Python the position, or index, of the item desired. To access an element in a list,
+	write the name of the list followed by the index of the item enclosed in square brackets.
 
-For example, let’s pull out the first bicycle in the list bicycles:
+	For example, let’s pull out the first bicycle in the list bicycles:
 
-   bicycles = ['trek', 'cannondale', 'redline', 'specialized']
-➊ print(bicycles[0])
+   	bicycles = ['trek', 'cannondale', 'redline', 'specialized']
+	➊ print(bicycles[0])
 
-The syntax for this is shown at ➊. When we ask for a single item from a list, Python returns just that element without square brackets:
+	The syntax for this is shown at ➊. When we ask for a single item from a list, Python returns just that element without square brackets:
 
-trek
+	trek
 
-You can also use the string methods from Chapter 2 on any element in this list. For example, you can format the element 'trek' more neatly by using the title() method:
+	You can also use the string methods from Chapter 2 on any element in this list. For example, you can format the element 'trek' more neatly by using the title() method:
 
-bicycles = ['trek', 'cannondale', 'redline', 'specialized']
-print(bicycles[0].title())
+	bicycles = ['trek', 'cannondale', 'redline', 'specialized']
+	print(bicycles[0].title())
 
-This example produces the same output as the preceding example except 'Trek' is capitalized.
+	This example produces the same output as the preceding example except 'Trek' is capitalized.
 
-Python has a special syntax for accessing the last element in a list. By asking for the item at index -1, Python always returns the last item in the list:
+	Python has a special syntax for accessing the last element in a list. By asking for the item at index -1, Python always returns the last item in the list:
 
-bicycles = ['trek', 'cannondale', 'redline', 'specialized']
-print(bicycles[-1])
+	bicycles = ['trek', 'cannondale', 'redline', 'specialized']
+	print(bicycles[-1])
 
-This code returns the value 'specialized'. This syntax is quite useful, because you’ll often want to access the last items in a list without knowing exactly how long the list is.
-This convention extends to other negative index values as well. The index -2 returns the second item from the end of the list, the index -3 returns the third item from the end, and so forth.
+	This code returns the value 'specialized'. This syntax is quite useful, because you’ll often want to access the last items in a list without knowing exactly how long the
+	list is.
+	This convention extends to other negative index values as well. The index -2 returns the second item from the end of the list, the index -3 returns the third item from
+	the end, and so forth.
 
 Using Individual Values from a List
-You can use individual values from a list just as you would any other variable. For example, you can use f-strings to create a message based on a value from a list.
+	
+	You can use individual values from a list just as you would any other variable. For example, you can use f-strings to create a message based on a value from a list.
 
-Let’s try pulling the first bicycle from the list and composing a message using that value.
+	Let’s try pulling the first bicycle from the list and composing a message using that value.
 
-   bicycles = ['trek', 'cannondale', 'redline', 'specialized']
-➊ message = f"My first bicycle was a {bicycles[0].title()}."
+   	bicycles = ['trek', 'cannondale', 'redline', 'specialized']
+	➊ message = f"My first bicycle was a {bicycles[0].title()}."
 
-   print(message)
+   	print(message)
 
-At ➊, we build a sentence using the value at bicycles[0] and assign it to the variable message. The output is a simple sentence about the first bicycle in the list:
+	At ➊, we build a sentence using the value at bicycles[0] and assign it to the variable message. The output is a simple sentence about the first bicycle in the list:
 
-My first bicycle was a Trek.
+	My first bicycle was a Trek.
+
+
+4.- Modifying Elements in a List
+
+	To change an element, use the name of the list followed by the index of the element you want to change, and then provide the new value you want that item to have.
+
+	➊ motorcycles = ['honda', 'yamaha', 'suzuki']
+   	print(motorcycles)
+
+	['honda', 'yamaha', 'suzuki']
+
+	➋ motorcycles[0] = 'ducati'
+   	print(motorcycles)
+
+	['ducati', 'yamaha', 'suzuki']
+
+	The code at ➊ defines the original list, with 'honda' as the first element. The code at ➋ changes the value of the first item to 'ducati'. The output shows that the
+	first item has indeed been changed, and the rest of the list stays the same.
+
+5.- Adding Elements to a List
+	Python provides several ways to add new data to existing lists.
+
+	Appending Elements to the End of a List
+
+		The simplest way to add a new element to a list is to append the item to the list. When you append an item to a list, the new element is added to the end of the list.
+
+		motorcycles = ['honda', 'yamaha', 'suzuki']
+   		print(motorcycles)
+
+		➊ motorcycles.append('ducati')
+   		print(motorcycles)
+
+		The append() method at ➊ adds 'ducati' to the end of the list without affecting any of the other elements in the list:
+
+		['honda', 'yamaha', 'suzuki']
+		['honda', 'yamaha', 'suzuki', 'ducati']
+	
+		The append() method makes it easy to build lists dynamically. For example, you can start with an empty list and then add items to the list using a series of append()
+		calls. Using an empty list, let’s add the elements 'honda', 'yamaha', and 'suzuki' to the list:
+
+		motorcycles = []
+
+		motorcycles.append('honda')
+		motorcycles.append('yamaha')
+		motorcycles.append('suzuki')
+		print(motorcycles)
+
+	Inserting Elements into a List
+
+		You can add a new element at any position in your list by using the insert() method. You do this by specifying the index of the new element and the value of the new
+		item.
+
+   		motorcycles = ['honda', 'yamaha', 'suzuki']
+
+		➊ motorcycles.insert(0, 'ducati')
+   		print(motorcycles)
+
+		In this example, the code at ➊ inserts the value 'ducati' at the beginning of the list. The insert() method opens a space at position 0 and stores the value 'ducati'
+		at that location. This operation shifts every other value in the list one position to the right:
+
+		['ducati', 'honda', 'yamaha', 'suzuki']
+
+6.- Removing Elements from a List
+
+	You can remove an item according to its position in the list or according to its value.
+	
+		Removing an Item Using the del Statement
+			
+			If you know the position of the item you want to remove from a list, you can use the del statement.
+
+   			motorcycles = ['honda', 'yamaha', 'suzuki']
+   			print(motorcycles)
+
+			➊ del motorcycles[0]
+   			print(motorcycles)
+
+			The code at ➊ uses del to remove the first item, 'honda', from the list of motorcycles:
+
+			['honda', 'yamaha', 'suzuki']
+			['yamaha', 'suzuki']
+
+		Removing an Item Using the pop() Method
+			
+			Sometimes you’ll want to use the value of an item after you remove it from a list. For example, you might want to get the x and y position of an alien that
+			was just shot down, so you can draw an explosion at that position. In a web application, you might want to remove a user from a list of active members and
+			then add that user to a list of inactive members.
+
+			The pop() method removes the last item in a list, but it lets you work with that item after removing it. The term pop comes from thinking of a list as a
+			stack of items and popping one item off the top of the stack. In this analogy, the top of a stack corresponds to the end of a list.
+
+			Let’s pop a motorcycle from the list of motorcycles:
+
+				➊ motorcycles = ['honda', 'yamaha', 'suzuki']
+   				print(motorcycles)
+
+				➋ popped_motorcycle = motorcycles.pop()
+				➌ print(motorcycles)
+				➍ print(popped_motorcycle)
+
+			We start by defining and printing the list motorcycles at ➊. At ➋ we pop a value from the list and store that value in the variable popped_motorcycle.
+			We print the list at ➌ to show that a value has been removed from the list. Then we print the popped value at ➍ to prove that we still have access to the
+			value that was removed.
+
+			The output shows that the value 'suzuki' was removed from the end of the list and is now assigned to the variable popped_motorcycle:
+
+				['honda', 'yamaha', 'suzuki']
+				['honda', 'yamaha']
+				suzuki
+
+			How might this pop() method be useful? Imagine that the motorcycles in the list are stored in chronological order according to when we owned them. If this
+			is the case, we can use the pop() method to print a statement about the last motorcycle we bought:
+
+				motorcycles = ['honda', 'yamaha', 'suzuki']
+				last_owned = motorcycles.pop()
+				print(f"The last motorcycle I owned was a {last_owned.title()}.")
+
+			The output is a simple sentence about the most recent motorcycle we owned:
+
+			The last motorcycle I owned was a Suzuki.
+
+		Popping Items from any Position in a List
+
+			You can use pop() to remove an item from any position in a list by including the index of the item you want to remove in parentheses.
+
+   				motorcycles = ['honda', 'yamaha', 'suzuki']
+				➊ first_owned = motorcycles.pop(0)
+				➋ print(f"The first motorcycle I owned was a {first_owned.title()}.")
+
+			Each time you use pop(), the item you work with is no longer stored in the list.
+
+			If you’re unsure whether to use the del statement or the pop() method, here’s a simple way to decide: when you want to delete an item from a list and not
+			use that item in any way, use the del statement; if you want to use an item as you remove it, use the pop() method.
+
+		Removing an Item by Value
+
+			Sometimes you won’t know the position of the value you want to remove from a list. If you only know the value of the item you want to remove, you can use
+			the remove() method.
+
+			For example, let’s say we want to remove the value 'ducati' from the list of motorcycles.
+
+   				motorcycles = ['honda', 'yamaha', 'suzuki', 'ducati']
+   				print(motorcycles)
+
+				➊ motorcycles.remove('ducati')
+   				print(motorcycles)
+
+			The code at ➊ tells Python to figure out where 'ducati' appears in the list and remove that element:
+
+				['honda', 'yamaha', 'suzuki', 'ducati']
+				['honda', 'yamaha', 'suzuki']
+
+			You can also use the remove() method to work with a value that’s being removed from a list. Let’s remove the value 'ducati' and print a reason for removing
+			it from the list:
+
+				➊ motorcycles = ['honda', 'yamaha', 'suzuki', 'ducati']
+			   	print(motorcycles)
+				➋ too_expensive = 'ducati'
+				➌ motorcycles.remove(too_expensive)
+   				print(motorcycles)
+				➍ print(f"\nA {too_expensive.title()} is too expensive for me.")
+
+			After defining the list at ➊, we assign the value 'ducati' to a variable called too_expensive ➋. We then use this variable to tell Python which value to
+			remove from the list at ➌. At ➍ the value 'ducati' has been removed from the list but is still accessible through the variable too_expensive, allowing us
+			to print a statement about why we removed 'ducati' from the list of motorcycles:
+
+				['honda', 'yamaha', 'suzuki', 'ducati']
+				['honda', 'yamaha', 'suzuki']
+
+				A Ducati is too expensive for me.
+
+			**NOTE**
+			
+			The remove() method deletes only the first occurrence of the value you specify. If there’s a possibility the value appears more than once in the list,
+			you’ll need to use a loop to make sure all occurrences of the value are removed
+
+
