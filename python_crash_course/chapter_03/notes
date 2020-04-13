@@ -12,59 +12,58 @@
 
 	For example, let’s pull out the first bicycle in the list bicycles:
 
-   	bicycles = ['trek', 'cannondale', 'redline', 'specialized']
-	➊ print(bicycles[0])
+   		bicycles = ['trek', 'cannondale', 'redline', 'specialized']
+		➊ print(bicycles[0])
 
 	The syntax for this is shown at ➊. When we ask for a single item from a list, Python returns just that element without square brackets:
 
-	trek
+		trek
 
 	You can also use the string methods from Chapter 2 on any element in this list. For example, you can format the element 'trek' more neatly by using the title() method:
 
-	bicycles = ['trek', 'cannondale', 'redline', 'specialized']
-	print(bicycles[0].title())
+		bicycles = ['trek', 'cannondale', 'redline', 'specialized']
+		print(bicycles[0].title())
 
 	This example produces the same output as the preceding example except 'Trek' is capitalized.
 
 	Python has a special syntax for accessing the last element in a list. By asking for the item at index -1, Python always returns the last item in the list:
 
-	bicycles = ['trek', 'cannondale', 'redline', 'specialized']
-	print(bicycles[-1])
+		bicycles = ['trek', 'cannondale', 'redline', 'specialized']
+		print(bicycles[-1])
 
 	This code returns the value 'specialized'. This syntax is quite useful, because you’ll often want to access the last items in a list without knowing exactly how long the
 	list is.
 	This convention extends to other negative index values as well. The index -2 returns the second item from the end of the list, the index -3 returns the third item from
 	the end, and so forth.
 
-Using Individual Values from a List
+	Using Individual Values from a List
 	
-	You can use individual values from a list just as you would any other variable. For example, you can use f-strings to create a message based on a value from a list.
+		You can use individual values from a list just as you would any other variable. For example, you can use f-strings to create a message based on a value from a list.
 
-	Let’s try pulling the first bicycle from the list and composing a message using that value.
+		Let’s try pulling the first bicycle from the list and composing a message using that value.
 
-   	bicycles = ['trek', 'cannondale', 'redline', 'specialized']
-	➊ message = f"My first bicycle was a {bicycles[0].title()}."
+   			bicycles = ['trek', 'cannondale', 'redline', 'specialized']
+			➊ message = f"My first bicycle was a {bicycles[0].title()}."
 
-   	print(message)
+   			print(message)
 
-	At ➊, we build a sentence using the value at bicycles[0] and assign it to the variable message. The output is a simple sentence about the first bicycle in the list:
+		At ➊, we build a sentence using the value at bicycles[0] and assign it to the variable message. The output is a simple sentence about the first bicycle in the list:
 
-	My first bicycle was a Trek.
-
+			My first bicycle was a Trek.
 
 4.- Modifying Elements in a List
 
 	To change an element, use the name of the list followed by the index of the element you want to change, and then provide the new value you want that item to have.
 
-	➊ motorcycles = ['honda', 'yamaha', 'suzuki']
-   	print(motorcycles)
+		➊ motorcycles = ['honda', 'yamaha', 'suzuki']
+   		print(motorcycles)
 
-	['honda', 'yamaha', 'suzuki']
+		['honda', 'yamaha', 'suzuki']
 
-	➋ motorcycles[0] = 'ducati'
-   	print(motorcycles)
+		➋ motorcycles[0] = 'ducati'
+   		print(motorcycles)
 
-	['ducati', 'yamaha', 'suzuki']
+		['ducati', 'yamaha', 'suzuki']
 
 	The code at ➊ defines the original list, with 'honda' as the first element. The code at ➋ changes the value of the first item to 'ducati'. The output shows that the
 	first item has indeed been changed, and the rest of the list stays the same.
@@ -76,41 +75,41 @@ Using Individual Values from a List
 
 		The simplest way to add a new element to a list is to append the item to the list. When you append an item to a list, the new element is added to the end of the list.
 
-		motorcycles = ['honda', 'yamaha', 'suzuki']
-   		print(motorcycles)
+			motorcycles = ['honda', 'yamaha', 'suzuki']
+   			print(motorcycles)
 
-		➊ motorcycles.append('ducati')
-   		print(motorcycles)
+			➊ motorcycles.append('ducati')
+   			print(motorcycles)
 
 		The append() method at ➊ adds 'ducati' to the end of the list without affecting any of the other elements in the list:
 
-		['honda', 'yamaha', 'suzuki']
-		['honda', 'yamaha', 'suzuki', 'ducati']
+			['honda', 'yamaha', 'suzuki']
+			['honda', 'yamaha', 'suzuki', 'ducati']
 	
 		The append() method makes it easy to build lists dynamically. For example, you can start with an empty list and then add items to the list using a series of append()
 		calls. Using an empty list, let’s add the elements 'honda', 'yamaha', and 'suzuki' to the list:
 
-		motorcycles = []
+			motorcycles = []
 
-		motorcycles.append('honda')
-		motorcycles.append('yamaha')
-		motorcycles.append('suzuki')
-		print(motorcycles)
+			motorcycles.append('honda')
+			motorcycles.append('yamaha')
+			motorcycles.append('suzuki')
+			print(motorcycles)
 
 	Inserting Elements into a List
 
 		You can add a new element at any position in your list by using the insert() method. You do this by specifying the index of the new element and the value of the new
 		item.
 
-   		motorcycles = ['honda', 'yamaha', 'suzuki']
+   			motorcycles = ['honda', 'yamaha', 'suzuki']
 
-		➊ motorcycles.insert(0, 'ducati')
-   		print(motorcycles)
+			➊ motorcycles.insert(0, 'ducati')
+   			print(motorcycles)
 
 		In this example, the code at ➊ inserts the value 'ducati' at the beginning of the list. The insert() method opens a space at position 0 and stores the value 'ducati'
 		at that location. This operation shifts every other value in the list one position to the right:
 
-		['ducati', 'honda', 'yamaha', 'suzuki']
+			['ducati', 'honda', 'yamaha', 'suzuki']
 
 6.- Removing Elements from a List
 
