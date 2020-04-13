@@ -45,6 +45,11 @@ print(message10.lstrip())
 print(message11.rstrip())
 print(message12.strip())
 
+#Exercise 3-9
+print("\n\nPrinting the number of guests for the dinner\n")
+print(len(relatives))
+
+
 #3-5. Changing Guest List
 
 print(f"\nAunt {relatives[2].title().lstrip()} cannot make it, so we will need to change the guest list.\nPrinting new set of invitations (some have not changed).\n***NEW INVITATIONS***")
@@ -56,6 +61,10 @@ print(message9)
 print(message10.lstrip())
 print(new_message11.lstrip())
 print(message12.strip())
+
+#Exercise 3-9
+print("\n\nPrinting the number of guests for the dinner\n")
+print(len(relatives))
 
 #3-6. More Guests:
 
@@ -93,6 +102,10 @@ print(new_message12.strip())
 print(new_message14)
 print(new_message15)
 print(new_message11.lstrip())
+
+#Exercise 3-9
+print("\n\nPrinting the number of guests for the dinner\n")
+print(len(relatives))
 
 #3-7. Shrinking Guest List
 
@@ -134,3 +147,106 @@ relatives.remove("dad")
 print("\nDisplaying remaining guests - list should be empty")
 print(relatives)
 
+#Exercise 3-9
+print("\n\nPrinting the number of guests for the dinner\n")
+print(len(relatives))
+
+#3-8. Seeing the World (list indexes are in lowercase - uppercase can be more complex)
+
+destinations = ["mexico", "chile", "sweden", "belgium", "denmark"]
+print("\n\nPrinting current list without modifications\n")
+print(destinations)
+
+print("\nAltering the order of the list using sorted function\n")
+sorted_list = sorted(destinations)
+print(sorted_list)
+
+#Syntax for sorted function can be tricky:
+#- You cannot simply print it. Instead, create a variable, tag the result of the function applied to the list with the variable, and print the variable
+#- THIS cannot be done **print(destinations.sort())** - prints "none" - same applies for the reverse method (see below how the change is performed and the original list printed)
+#- Reverse order also requires a different syntax (see next use of the function)
+
+print("\nPrinting list to confirm it has not been affected\n")
+print(destinations)
+
+print("\nAltering the order of the list using sorted function with reverse argument\n")
+#Watch out for this syntax - not described in the book
+sorted_list2 = sorted(destinations, reverse=True)
+print(sorted_list2)
+
+print("\nPrinting list to confirm it has not been affected\n")
+print(destinations)
+
+print("\nAltering the order of the list using reverse method\n")
+destinations.reverse()
+print(destinations)
+
+print("\nApplying reverse method again to show restore the original order\n")
+destinations.reverse()
+print(destinations)
+
+print("\nAltering the order of the list using sort method\n")
+destinations.sort()
+print(destinations)
+
+print("\nAltering the order of the list using sort method with reverse argument\n")
+destinations.sort()
+print(destinations)
+
+#3-9. Dinner Guests (handled in exercises 3-4 through 3-7)
+
+#3-10. Every Function
+
+print("\n\nCreating empty list")
+cities = []
+print(cities)
+
+print("Adding one city with insert method")
+cities.insert(0, "prague")
+print(cities)
+
+print("Adding another city at the end with append method")
+cities.append("turku")
+print(cities)
+
+print("Adding more cities with append method")
+cities.append("madrid")
+cities.append("paris")
+cities.append("barcelona")
+cities.append("brno")
+cities.append("helsinki")
+
+print(cities)
+print("Counting current list lenght")
+print(f"The number of elements in the list is {len(cities)}")
+
+print("Removing the last element of the list with pop method")
+cities.pop()
+print(cities)
+
+print("Removing Barcelona with remove method")
+cities.remove("barcelona")
+print(cities)
+print(f"The number of remaining elements in the list is {len(cities)}")
+
+print("\nDisplaying elements in alternate order without modifying the original list")
+cities_scrambled = sorted(cities)
+print(cities_scrambled)
+print("\nPrinting original list")
+print(cities)
+
+print("\nNow printing in reverse order without affecting the list")
+cities_scrambled2 = sorted(cities, reverse=True)
+print(cities_scrambled2)
+print("\nPrinting original list")
+print(cities)
+
+print("\nRearranging the list using sort method - this changes the list permanently")
+cities.sort()
+print(cities)
+
+print("Rearranging the list usign sort method with reverse argument - the list has changed permanently again")
+cities.sort(reverse=True)
+print(cities)
+
+#3-11. Intentional Error - I have done this endless amount of times (actually a lot of them, it was a loop)
